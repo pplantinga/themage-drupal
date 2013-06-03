@@ -1,0 +1,53 @@
+/* Global styles */
+body {
+	font-family: sans-serif;
+	color: #CCC;
+	background: url( 'background.svg' );
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: Lobster, serif;
+	font-weight: normal;
+	text-shadow: 0 1px 0 #000;
+}
+a {
+	color: #89C;
+	text-decoration: none;
+	border-bottom: 1px solid #666;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+a:visited {
+	color: #A7A;
+}
+a:hover {
+	color: #B66;
+	border-color: #B66;
+}
+
+/* Whole Page */
+#page {
+	padding: 4%;
+	margin: 4%;
+	background: #000;
+	background: rgba( 0, 0, 0, 0.7 );
+	box-shadow: 0 0 10px #000;
+	border-radius: 10px;
+}
+
+/* Header */
+#site-name a {
+	color: #CCC;
+	border: none;
+	font-size: 35px;
+	font-size: 2.5rem;
+	font-family: Lobster, serif;
+	text-shadow: 0 1px 0 #000;
+	font-weight: normal;
+}
+#site-slogan {
+	color: #999;
+	text-shadow: 0 1px 0 #000;
+}
+/* Menu */
+
