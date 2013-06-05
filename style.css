@@ -51,5 +51,23 @@ a:hover {
 	color: #999;
 	text-shadow: 0 1px 0 #000;
 }
-/* Menu */
 
+/* Menu */
+#navigation ul {
+	list-style-type: none;
+	border-bottom: 1px solid #666;
+	overflow: hidden;
+	padding: 0;
+}
+#navigation li a {
+	color: #FFF;
+	float: left;
+	display: block;
+	border-bottom: 4px solid rgba( 0, 0, 0, 0 );
+	padding: 7px 14px;
+}
+#navigation li a.active,
+#navigation li a:hover {
+	color: #89C;
+	border-bottom: 4px solid #89C;
+}
