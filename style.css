@@ -36,9 +36,11 @@ a:hover {
 }
 
 /* Header */
-#site-name a {
-	color: #CCC;
+#home-link {
 	border: none;
+}
+#site-name {
+	color: #CCC;
 	font-size: 35px;
 	font-size: 2.5rem;
 	font-family: Lobster, serif;
