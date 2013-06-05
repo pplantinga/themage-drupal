@@ -36,6 +36,10 @@ a:hover {
 }
 
 /* Header */
+#skip-link a {
+	background: #222;
+	padding: 10px;
+}
 #home-link {
 	border: none;
 }
