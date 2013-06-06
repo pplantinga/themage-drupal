@@ -68,6 +68,7 @@ button:active {
 	background: rgba( 0, 0, 0, 0.7 );
 	box-shadow: 0 0 10px #000;
 	border-radius: 10px;
+	overflow: hidden;
 }
 
 /* Header */
@@ -77,6 +78,8 @@ button:active {
 }
 #home-link {
 	border: none;
+	float: left;
+	margin-bottom: 16px;
 }
 #site-name {
 	color: #CCC;
@@ -90,6 +93,9 @@ button:active {
 	color: #999;
 	text-shadow: 0 1px 0 #000;
 }
+.region-header {
+	float: right;
+}
 
 /* Menu */
 #navigation ul {
@@ -97,16 +103,45 @@ button:active {
 	border-bottom: 1px solid #666;
 	overflow: hidden;
 	padding: 0;
+	clear: both;
 }
 #navigation li a {
 	color: #FFF;
 	float: left;
 	display: block;
 	border-bottom: 4px solid rgba( 0, 0, 0, 0 );
-	padding: 7px 14px;
+	padding: 8px 16px;
 }
 #navigation li a.active,
 #navigation li a:hover {
 	color: #89C;
 	border-bottom: 4px solid #89C;
+}
+
+/* Sidebar */
+.sidebar {
+	width: 30%;
+	float: left;
+}
+#sidebar-first {
+	padding-right: 5%;
+}
+.one-sidebar #main-content {
+	width: 60%;
+	padding-right: 5%;
+	float: left;
+}
+.two-sidebars .sidebar {
+	width: 20%;
+}
+.two-sidebars #main-content {
+	width: 55%;
+	padding-right: 5%;
+	float: left;
+}
+
+/* Footer */
+#page-footer {
+	clear: both;
+	border-top: 1px solid #666;
 }
