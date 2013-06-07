@@ -1,0 +1,146 @@
+@import compass/css3
+
+/* Declare variables
+$blue: #89C
+$purple: #A7A
+$red: #B66
+$light: #CCC
+$medium: #666
+$dark: #222
+$rem: 16px
+$half: 8px
+
+/* Global styles */
+body
+	color: $light
+	background: $blue
+	background: url( '../images/background.svg' )
+	font-family: sans-serif
+
+h1,h2,h3,h4,h5,h6
+	+text-shadow( 0 1px 0 #000 )
+	font:
+		family: Lobster, serif
+		weight: normal
+
+a
+	color: $blue
+	text-decoration: none
+	border-bottom: 1px solid $medium
+	+transition-duration( 0.2s )
+
+	&:visited
+		color: $purple
+
+	&:hover
+		color: $red
+		border-color: $red
+
+/* Forms */
+input, button, textarea
+	border: 1px solid $light
+	font-size: $rem
+	border-radius: 3px
+	padding: $half
+	color: $dark
+
+input[type="submit"],
+input[type="cancel"],
+input[type="button"],
+button
+	padding: $half $rem
+	font-weight: bold
+	text-shadow: 0 1px 0 #FFF
+	background: $light
+	+background-image( linear-gradient(#FFF, #BBB) )
+
+	&:hover,
+	&:active
+		background-image: none
+
+	&:active
+		box-shadow: inset 0 0 $rem $medium
+
+/* Whole Page */
+#page
+	padding: 4%
+	margin: 4%
+	overflow: hidden
+	border-radius: $rem
+	background: $dark
+	background: rgba( $dark, 0.7 )
+	+box-shadow( 0 0 $rem $dark )
+
+/* Header */
+#skip-link a
+	background: $dark
+	padding: $half $rem
+
+#home-link
+	border: none
+	float: left
+	margin-bottom: $rem
+
+#site-name
+	color: $light
+	+text-shadow( 0 1px 0 #000 )
+	font:
+		size: 2.5 * $rem
+		family: Lobster, serif
+		weight: normal
+
+#site-slogan
+	color: $light
+	+text-shadow( 0 1px 0 #000 )
+
+.region-header
+	float: right
+
+
+/* Menu */
+#navigation ul
+	list-style-type: none
+	border-bottom: 1px solid $medium
+	overflow: hidden
+	padding: 0
+	clear: both
+
+#navigation li a
+	color: #FFF
+	float: left
+	display: block
+	border-bottom: 4px solid rgba( #000, 0 )
+	padding: $half $rem
+
+	&.active,
+	&:hover
+		color: $blue
+		border-bottom: 4px solid $blue
+
+/* Sidebar */
+.sidebar
+	width: 30%
+	float: left
+
+#sidebar-first
+	padding-right: 5%
+
+.one-sidebar #main-content
+	width: 60%
+	padding-right: 5%
+	float: left
+
+.two-sidebars .sidebar
+	width: 20%
+
+.two-sidebars #main-content
+	width: 55%
+	padding-right: 5%
+	float: left
+
+
+/* Footer */
+#page-footer
+	clear: both
+	border-top: 1px solid $medium
+
