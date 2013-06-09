@@ -103,6 +103,29 @@ samp
 	border-radius: 3px
 	word-wrap: normal
 
+/* Indented stuffs */
+ul, dl, ol
+	padding-left: $rem + $half
+
+li, dt, dd
+	margin-bottom: $half
+
+dt
+	font-weight: bold
+
+dd
+	margin-left: $rem
+
+blockquote
+	margin-left: $rem
+	padding-left: $rem
+	border-left: 4px solid #8C8
+	font-style: italic
+
+blockquote cite,
+blockquote em
+	font-weight: bold
+
 /* Whole Page */
 #page
 	padding: 4%
@@ -146,6 +169,10 @@ samp
 	overflow: hidden
 	padding: 0
 	clear: both
+
+#navigation li
+	padding: 0
+	margin: 0
 
 #navigation li a
 	color: #FFF
