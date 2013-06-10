@@ -39,3 +39,9 @@ function themage_html_head_alter(&$head_elements) {
     'charset' => 'utf-8',
   );
 }
+
+function themage_preprocess_region(&$vars) {
+	if ( $vars['region'] == 'sidebar_first' || $vars['region'] == 'sidebar_second' ) {
+		$vars['classes_array'][] = 'sidebar';
+	}
+}
