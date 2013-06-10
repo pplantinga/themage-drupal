@@ -1,6 +1,6 @@
   <div id="page">
 
-    <header id="page-header" role="header">
+    <header id="page-header" role="banner">
 
       <a href="<?php print $front_page; ?>" rel="home" id="home-link">
       	<?php if ($logo): ?>
@@ -9,7 +9,7 @@
 
 				<?php if ($site_name): ?>
 					<?php if ($title): ?>
-						<span id="site-name"><?php print $site_name; ?></span>
+						<div id="site-name"><?php print $site_name; ?></div>
 					<?php else: /* Use h1 when the content title is empty */ ?>
 						<h1 id="site-name"><?php print $site_name; ?></h1>
 					<?php endif; ?>
@@ -19,53 +19,52 @@
 				<?php endif; ?>
       </a>
 
-      <?php print render($page['header']); ?>
-
+			<?php if ( $page['header'] ): ?>
+      	<?php print render($page['header']); ?>
+			<?php endif; ?>
     </header>
 
     <?php if ($main_menu || $secondary_menu): ?>
-      <nav id="navigation" role="navigation">
+      <nav id="page-menu" role="navigation">
         <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
         <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu'))); ?>
       </nav>
     <?php endif; ?>
 
     <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+      <nav id="page-breadcrumb" role="navigation"><?php print $breadcrumb; ?></nav>
     <?php endif; ?>
 
     <?php print $messages; ?>
 
     <main id="page-main" role="main">
 
-      <div id="main-content" class="column">
+			<header id="main-header" role="header">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+        <?php if ($title): ?><h1 class="title" id="main-title"><?php print $title; ?></h1><?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php if ($tabs): ?><nav class="tabs"><?php print render($tabs); ?></nav><?php endif; ?>
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+			</header>
+
+      <section id="main-content">
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
-      </div> <!-- #main-content -->
-
-      <?php if ($page['sidebar_first']): ?>
-        <section id="sidebar-first" class="column sidebar">
-          <?php print render($page['sidebar_first']); ?>
-        </section>
-      <?php endif; ?>
-
-      <?php if ($page['sidebar_second']): ?>
-        <section id="sidebar-second" class="column sidebar">
-          <?php print render($page['sidebar_second']); ?>
-        </section>
-      <?php endif; ?>
-
+      </section> <!-- #main-content -->
 		</main>
 
-    <footer id="page-footer" role="footer">
-      <?php print render($page['footer']); ?>
-    </footer>
+		<?php if ($page['sidebar_first']): ?>
+			<?php print render($page['sidebar_first']); ?>
+		<?php endif; ?>
+
+		<?php if ($page['sidebar_second']): ?>
+			<?php print render($page['sidebar_second']); ?>
+		<?php endif; ?>
+
+		<?php if ( $page['footer'] ): ?>
+			<?php print render($page['footer']); ?>
+		<?php endif; ?>
 
   </div> <!-- #page -->
