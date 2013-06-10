@@ -45,3 +45,14 @@ function themage_preprocess_region(&$vars) {
 		$vars['classes_array'][] = 'sidebar';
 	}
 }
+
+function themage_preprocess_node(&$vars) {
+	// Add html5 time element
+	$vars['submitted'] = t('Submitted by !username on <time datetime="!time">!date</time>',
+		array(
+			'!username' => $vars['name'],
+			'!time' => $vars['date'],
+			'!date' => $vars['date'],
+		)
+	);
+}
