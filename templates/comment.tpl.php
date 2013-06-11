@@ -25,7 +25,6 @@
 
 	<footer role="contentinfo">
   	<?php print $picture ?>
-    <?php print $permalink; ?>
     <?php print $submitted; ?>
 	</footer>
 
