@@ -46,13 +46,30 @@ function themage_preprocess_region(&$vars) {
 	}
 }
 
+/**
+ * Implements template_preprocess_node
+ */
 function themage_preprocess_node(&$vars) {
-	// Add html5 time element
-	$vars['submitted'] = t('Submitted by !username on <time datetime="!time">!date</time>',
+	$vars['submitted'] = themage_submitted( $vars['name'], $vars['created'] );
+}
+
+/**
+ * Implements template_preprocess_comment
+ */
+function themage_preprocess_comment(&$vars) {
+	$vars['submitted'] = themage_submitted( $vars['author'], $vars['comment']->created );
+}
+
+/**
+ * Add html5 time element to time
+ */
+function themage_submitted( $author, $datetime ) {
+	$date_string = format_date( $datetime, 'custom', 'F j, Y' );
+	$time_string = format_date( $datetime, 'custom', 'c' );
+	return t('Submitted by !username on !datetime',
 		array(
-			'!username' => $vars['name'],
-			'!time' => $vars['date'],
-			'!date' => $vars['date'],
+			'!username' => $author,
+			'!datetime' => "<time datetime='$time_string'>$date_string</time>",
 		)
 	);
 }
