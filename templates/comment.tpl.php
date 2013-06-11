@@ -1,6 +1,6 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-	<header role="header">
+	<header>
 		<?php if ($new): ?>
 			<span class="new"><?php print $new ?></span>
 		<?php endif; ?>
