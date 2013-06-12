@@ -1,6 +1,6 @@
   <div id="page">
 
-    <header id="page-header" role="banner">
+    <header id="page-header" role="banner" class="clearfix">
 
       <a href="<?php print $front_page; ?>" rel="home" id="home-link">
       	<?php if ($logo): ?>
@@ -13,7 +13,7 @@
 					<?php else: /* Use h1 when the content title is empty */ ?>
 						<h1 id="site-name"><?php print $site_name; ?></h1>
 					<?php endif; ?>
-        <?php endif; ?>
+				<?php endif; ?>
 				<?php if ($site_slogan): ?>
 					<div id="site-slogan"><?php print $site_slogan; ?></div>
 				<?php endif; ?>
@@ -39,7 +39,7 @@
 
     <main id="page-main" role="main">
 
-			<header id="main-header" role="header">
+			<header id="main-header">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?><h1 class="title" id="main-title"><?php print $title; ?></h1><?php endif; ?>
