@@ -24,10 +24,9 @@
 			<?php endif; ?>
     </header>
 
-    <?php if ($main_menu || $secondary_menu): ?>
+    <?php if ($main_menu): ?>
       <nav id="page-menu" role="navigation">
         <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu'))); ?>
-        <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu'))); ?>
       </nav>
     <?php endif; ?>
 
@@ -63,8 +62,16 @@
 			<?php print render($page['sidebar_second']); ?>
 		<?php endif; ?>
 
-		<?php if ( $page['footer'] ): ?>
-			<?php print render($page['footer']); ?>
-		<?php endif; ?>
+		<footer id="page-footer">
+			<?php if ($secondary_menu): ?>
+				<nav id="footer-menu" role="navigation" class="clearfix">
+					<?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu'))); ?>
+				</nav>
+			<?php endif; ?>
+
+			<?php if ( $page['footer'] ): ?>
+				<?php print render($page['footer']); ?>
+			<?php endif; ?>
+		</footer>
 
   </div> <!-- #page -->

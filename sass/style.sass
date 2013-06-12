@@ -192,7 +192,7 @@ img
 	margin: 0
 
 #page-menu li a
-	color: #FFF
+	color: $light
 	float: left
 	display: block
 	border-bottom: 4px solid rgba( #000, 0 )
@@ -202,6 +202,21 @@ img
 	&:hover
 		color: $blue
 		border-bottom: 4px solid $blue
+
+#footer-menu ul
+	list-style-type: none
+	padding: 0
+
+	li
+		float: left
+		padding-left: $half
+		margin-left: $half
+		border-left: 1px solid $light
+
+	li.first
+		border: none
+		padding: 0
+		margin: 0
 
 /* Drupal list overrides */
 li a.active
