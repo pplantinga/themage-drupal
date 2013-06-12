@@ -1,9 +1,7 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 	<header>
-		<?php if ($new): ?>
-			<span class="new"><?php print $new ?></span>
-		<?php endif; ?>
+  	<?php print $picture ?>
 
 		<?php print render($title_prefix); ?>
 		<h3<?php print $title_attributes; ?>><?php print $title ?></h3>
@@ -24,7 +22,6 @@
   </section>
 
 	<footer role="contentinfo">
-  	<?php print $picture ?>
     <?php print $submitted; ?>
 	</footer>
 
