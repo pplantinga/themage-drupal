@@ -56,8 +56,7 @@ select
 input[type="submit"],
 input[type="cancel"],
 input[type="button"],
-button,
-.tabs a
+button
 	@extend select
 	font-weight: bold
 
@@ -203,6 +202,27 @@ img
 	&:hover
 		color: $blue
 		border-bottom: 4px solid $blue
+
+/* Drupal list overrides */
+li a.active
+	color: $light
+
+	&:hover
+		color: $red
+
+ul.tabs li
+	line-height: 2
+
+ul.tabs li a
+	padding: $half $rem
+	color: $dark
+	+border-radius( 5px 5px 0 0 )
+
+	&.active
+		border-bottom: none
+
+	&:hover
+		color: $medium
 
 /* Sidebar */
 .sidebar
