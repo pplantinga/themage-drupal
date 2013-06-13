@@ -82,3 +82,19 @@ function themage_preprocess_block(&$vars) {
 	$vars['attributes_array']['role'] = 'complementary';
 }
 
+/**
+ * Implements template_breadcrumb
+ */
+function themage_breadcrumb(&$vars) {
+	$breadcrumb = $vars['breadcrumb'];
+
+	if ( empty($breadcrumb) || !theme_get_setting('breadcrumb_display') )
+		return;
+
+	if ( theme_get_setting('breadcrumb_title') )
+		$breadcrumb[] = drupal_get_title();
+
+	$breadcrumb_string = implode( theme_get_setting('breadcrumb_separator'), $breadcrumb );
+
+	return theme_get_setting('breadcrumb_prefix') . $breadcrumb_string;
+}

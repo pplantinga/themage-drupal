@@ -1,4 +1,10 @@
 name = Themage
 description = Simple, lightweight, responsive, accessible, future-friendly theme.
 core = 7.x
+
 stylesheets[all][] = css/style.css
+
+settings[breadcrumb_display] = 1
+settings[breadcrumb_title] = 1
+settings[breadcrumb_separator] = ' > '
+settings[breadcrumb_prefix] = 'You are here: '
