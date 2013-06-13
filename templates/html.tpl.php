@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * Themage's implementation to display the basic html structure
+ * of a single Drupal page.
+ */
+?>
 <!DOCTYPE html>
 <html<?php print $html_attributes; ?>>
 <head>

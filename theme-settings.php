@@ -1,9 +1,15 @@
 <?php
+/**
+ * @file
+ * Theme setting callbacks for Themage.
+ */
 
 /**
- * Give users options regarding breadcrumbs
+ * Implements hook_form_FORM_ID_alter().
  */
 function themage_form_system_theme_settings_alter(&$form, $form_state) {
+
+ 	// Give users options regarding breadcrumbs
 	$form['breadcrumb'] = array(
 		'#type' => 'fieldset',
 		'#title' => t('Breadcrumb Settings'),

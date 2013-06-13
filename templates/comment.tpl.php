@@ -1,3 +1,8 @@
+<?php
+/**
+ * @file
+ * Themage's implementation to display a comment
+ */
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 	<header>

@@ -1,3 +1,8 @@
+<?php
+/**
+ * @file
+ * Themage's implementation to display a node.
+ */
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 	<header>

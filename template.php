@@ -1,5 +1,14 @@
 <?php
+/**
+ * @file
+ * Contains theme override and preprocess functions.
+ */
 
+/**
+ * Implements template_preprocess_html().
+ *
+ * @see https://gist.github.com/pascalduez/1417914
+ */
 function themage_preprocess_html(&$vars) {
 	// Add Lobster font
 	drupal_add_css('http://fonts.googleapis.com/css?family=Lobster', array('type' => 'external'));
@@ -27,12 +36,22 @@ function themage_preprocess_html(&$vars) {
   $vars['attributes_array'] = '';
 }
 
+/**
+ * Implements template_process_html().
+ *
+ * @see https://gist.github.com/pascalduez/1417914
+ */
 function themage_process_html(&$vars) {
   // Flatten out html_attributes and body_attributes.
   $vars['html_attributes'] = drupal_attributes($vars['html_attributes_array']);
   $vars['body_attributes'] = drupal_attributes($vars['body_attributes_array']);
 }
 
+/**
+ * Implements hook_html_head_alter().
+ *
+ * @see https://gist.github.com/pascalduez/1417914
+ */
 function themage_html_head_alter(&$head_elements) {
   // Simplify the meta charset declaration.
   $head_elements['system_meta_content_type']['#attributes'] = array(
@@ -40,6 +59,9 @@ function themage_html_head_alter(&$head_elements) {
   );
 }
 
+/**
+ * Implements template_preprocess_region().
+ */
 function themage_preprocess_region(&$vars) {
 	if ( $vars['region'] == 'sidebar_first' || $vars['region'] == 'sidebar_second' ) {
 		$vars['classes_array'][] = 'sidebar';
@@ -47,21 +69,32 @@ function themage_preprocess_region(&$vars) {
 }
 
 /**
- * Implements template_preprocess_node
+ * Implements template_preprocess_node().
  */
 function themage_preprocess_node(&$vars) {
 	$vars['submitted'] = themage_submitted( $vars['name'], $vars['created'] );
 }
 
 /**
- * Implements template_preprocess_comment
+ * Implements template_preprocess_comment().
  */
 function themage_preprocess_comment(&$vars) {
 	$vars['submitted'] = themage_submitted( $vars['author'], $vars['comment']->created );
 }
 
 /**
- * Add html5 time element to time
+ * Formats a "submitted by" statement
+ *
+ * This function adds an html5 "time" element to the
+ * submitted by statement, for semantics.
+ *
+ * @param string $author
+ *   The author's name (optionally with html tags) to display.
+ * @param int $datetime
+ *   The creation time, in UNIX timestamp format.
+ *
+ * @return
+ *   A string to be used as "submitted by"
  */
 function themage_submitted( $author, $datetime ) {
 	$date_string = format_date( $datetime, 'custom', 'F j, Y' );
@@ -75,15 +108,14 @@ function themage_submitted( $author, $datetime ) {
 }
 
 /**
- * Implements template_preprocess_block
+ * Implements template_preprocess_block().
  */
 function themage_preprocess_block(&$vars) {
-	#print_r( $vars );
 	$vars['attributes_array']['role'] = 'complementary';
 }
 
 /**
- * Implements template_breadcrumb
+ * Implements template_breadcrumb().
  */
 function themage_breadcrumb(&$vars) {
 	$breadcrumb = $vars['breadcrumb'];

@@ -1,4 +1,10 @@
-  <div id="page">
+<?php
+/**
+ * @file
+ * Themage's implemenation to display a single Drupal page.
+ */
+?>
+	<div id="page">
 
     <header id="page-header" role="banner" class="clearfix">
 
