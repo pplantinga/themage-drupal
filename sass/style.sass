@@ -48,7 +48,8 @@ a
 input,
 button,
 textarea,
-select
+select,
+.pager a
   border: 1px solid $light
   +border-radius( 3px )
   color: $dark
@@ -65,7 +66,8 @@ select
 input[type="submit"],
 input[type="cancel"],
 input[type="button"],
-button
+button,
+.pager a
   background: $light
   +background-image( linear-gradient(#FFF, #BBB) )
   cursor: pointer
@@ -311,3 +313,11 @@ footer[role="contentinfo"]
   font-style: italic
   margin-bottom: $rem
   overflow: hidden
+
+.item-list .pager
+  margin: 1em
+
+  li
+    margin: 0
+    padding: 0
+
