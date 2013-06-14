@@ -10,6 +10,8 @@ INSTALLATION
 1. Move the 'themage' folder to your sites/all/themes directory.
 2. Enable the theme by going to admin/appearance and clicking 'Enable'
 3. To use this theme, click on 'Set default'
+4. If you want to keep the default background you'll need to enable SVG's
+    (Usually done in .htaccess with "AddType image/svg+xml svg")
 
 MAINTAINER
 ----------
