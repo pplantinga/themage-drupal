@@ -15,7 +15,10 @@
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <nav id="skip-link" role="navigation">
-    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    <a href="#main-content" class="element-invisible element-focusable"
+      onclick="jQuery('#main-content').attr('tabIndex',-1).focus();">
+        <?php print t('Skip to main content'); ?>
+    </a>
   </nav>
   <?php print $page_top; ?>
   <?php print $page; ?>
