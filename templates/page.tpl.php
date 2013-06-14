@@ -13,16 +13,20 @@
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       <?php endif; ?>
 
-      <?php if ($site_name): ?>
-        <?php if ($title): ?>
-          <div id="site-name"><?php print $site_name; ?></div>
-        <?php else: /* Use h1 when the content title is empty */ ?>
-          <h1 id="site-name"><?php print $site_name; ?></h1>
-        <?php endif; ?>
-      <?php endif; ?>
-      <?php if ($site_slogan): ?>
-        <div id="site-slogan"><?php print $site_slogan; ?></div>
-      <?php endif; ?>
+			<?php if ($site_name || $site_slogan): ?>
+				<div id="name-and-slogan">
+					<?php if ($site_name): ?>
+						<?php if ($title): ?>
+							<div id="site-name"><?php print $site_name; ?></div>
+						<?php else: /* Use h1 when the content title is empty */ ?>
+							<h1 id="site-name"><?php print $site_name; ?></h1>
+						<?php endif; ?>
+					<?php endif; ?>
+					<?php if ($site_slogan): ?>
+						<div id="site-slogan"><?php print $site_slogan; ?></div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
     </a>
 
     <?php if ($page['header']): ?>
