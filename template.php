@@ -131,8 +131,11 @@ function themage_breadcrumb(&$vars) {
     $breadcrumb[] = drupal_get_title();
   }
 
-  // Create the string to display from the array.
-  $breadcrumb_string = implode(theme_get_setting('breadcrumb_separator'), $breadcrumb);
+  // Create the string to display from the breadcrumb array.
+  $separator = check_plain(theme_get_setting('breadcrumb_separator'));
+  $breadcrumb_string = implode($separator, $breadcrumb);
 
-  return theme_get_setting('breadcrumb_prefix') . $breadcrumb_string;
+  $prefix = check_plain(theme_get_setting('breadcrumb_prefix'));
+
+  return $prefix . $breadcrumb_string;
 }
