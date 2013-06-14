@@ -5,7 +5,7 @@
  */
 ?>
 <?php if ($content): ?>
-	<section class="<?php print $classes; ?>">
+  <section class="<?php print $classes; ?>">
     <?php print $content; ?>
-	</section>
+  </section>
 <?php endif; ?>

@@ -3,15 +3,16 @@
  * @file
  * Themage's implementation to display a comment
  */
+?>
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-	<header>
-  	<?php print $picture ?>
+  <header>
+    <?php print $picture ?>
 
-		<?php print render($title_prefix); ?>
-		<h3<?php print $title_attributes; ?>><?php print $title ?></h3>
-		<?php print render($title_suffix); ?>
-	</header>
+    <?php print render($title_prefix); ?>
+    <h3<?php print $title_attributes; ?>><?php print $title ?></h3>
+    <?php print render($title_suffix); ?>
+  </header>
 
   <section class="content"<?php print $content_attributes; ?>>
     <?php
@@ -26,9 +27,9 @@
     <?php endif; ?>
   </section>
 
-	<footer role="contentinfo">
+  <footer role="contentinfo">
     <?php print $submitted; ?>
-	</footer>
+  </footer>
 
   <?php print render($content['links']) ?>
 </article>

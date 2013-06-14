@@ -12,279 +12,288 @@ $half: 7px
 
 /* Global styles */
 body
-	font-size: $rem
-	font-family: sans-serif
-	line-height: 1.5
-	color: $light
-	background: $blue
-	background: url( '../images/background.svg' )
-	margin: 0
+  background: $blue
+  background: url( '../images/background.svg' )
+  color: $light
+  font-size: $rem
+  font-family: sans-serif
+  line-height: 1.5
+  margin: 0
 
-h1,h2,h3,h4,h5,h6
-	+text-shadow( 0 1px 0 #000 )
-	font:
-		family: Lobster, serif
-		weight: normal
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font:
+    family: Lobster, serif
+    weight: normal
+  +text-shadow( 0 1px 0 #000 )
 
 a
-	color: $blue
-	text-decoration: none
-	border-bottom: 1px solid $medium
-	+transition-duration( 0.2s )
+  border-bottom: 1px solid $medium
+  color: $blue
+  text-decoration: none
+  +transition-duration( 0.2s )
 
-	&:visited
-		color: $purple
+  &:visited
+    color: $purple
 
-	&:hover
-		color: $red
-		border-color: $red
+  &:hover
+    border-color: $red
+    color: $red
 
 /* Forms */
-input, button, textarea, select
-	border: 1px solid $light
-	font-size: $rem
-	padding: $half
-	color: $dark
-	+border-radius( 3px )
+input,
+button,
+textarea,
+select
+  border: 1px solid $light
+  +border-radius( 3px )
+  color: $dark
+  font-size: $rem
+  padding: $half
 
 select
-	cursor: pointer
-	text-shadow: 0 1px 0 #FFF
-	padding: $half $rem
-	background: $light
-	+background-image( linear-gradient(#FFF, #BBB) )
+  background: $light
+  +background-image( linear-gradient(#FFF, #BBB) )
+  cursor: pointer
+  text-shadow: 0 1px 0 #FFF
+  padding: $half $rem
 
 input[type="submit"],
 input[type="cancel"],
 input[type="button"],
 button
-	@extend select
-	font-weight: bold
+  @extend select
+  font-weight: bold
 
-	&:hover,
-	&:active
-		background-image: none
+  &:hover,
+  &:active
+    background-image: none
 
-	&:active
-		box-shadow: inset 0 0 $rem $medium
+  &:active
+    box-shadow: inset 0 0 $rem $medium
 
 kbd
-	@extend select
-	padding: 5px 10px
-	cursor: default
-	font-family: sans-serif
-	font-size: 13px
-	+box-shadow( 1px 2px 0 #666 )
+  @extend select
+  +box-shadow( 1px 2px 0 #666 )
+  cursor: default
+  font-family: sans-serif
+  font-size: 13px
+  padding: 5px 10px
 
 /* Tables */
 table
-	margin-bottom: 14px
-	margin-bottom: 1rem
-	border-collapse: collapse
-	border-spacing: 0
+  border-collapse: collapse
+  border-spacing: 0
+  margin-bottom: $rem
 
-th, td
-	padding: 7px
-	padding: 0.5rem
-	border-bottom: 1px solid #666
+th,
+td
+  border-bottom: 1px solid #666
+  padding: $half
 
 th
-	font-weight: bold
-	text-align: left
-	background-color: #000
+  background-color: #000
+  font-weight: bold
+  text-align: left
 
 /* Drupal overrides */
 tr.even,
 tr.odd
-	background: none
+  background: none
 
 table.sticky-header
-	background-color: #000
+  background-color: #000
 
 /* Code */
 pre,
 code,
 samp
-	background: #000
-	overflow: auto
-	padding: 3px 7px
-	padding: 0.2rem 0.5rem
-	border: 1px solid #333
-	border-radius: 3px
-	word-wrap: normal
+  background: #000
+  border: 1px solid #333
+  border-radius: 3px
+  overflow: auto
+  padding: 3px 7px
+  word-wrap: normal
 
 /* Indented stuffs */
-ul, dl, ol
-	padding-left: $rem + $half
+ul,
+dl,
+ol
+  padding-left: $rem + $half
 
-li, dt, dd
-	margin-bottom: $half
+li,
+dt,
+dd
+  margin-bottom: $half
 
 dt
-	font-weight: bold
+  font-weight: bold
 
 dd
-	margin-left: $rem
+  margin-left: $rem
 
 blockquote
-	margin-left: $rem
-	padding-left: $rem
-	border-left: 4px solid #8C8
-	font-style: italic
+  border-left: 4px solid #8C8
+  font-style: italic
+  margin-left: $rem
+  padding-left: $rem
 
 blockquote cite,
 blockquote em
-	font-weight: bold
+  font-weight: bold
 
 img
-	max-width: 100%
-	+border-radius( 3px )
+  +border-radius( 3px )
+  max-width: 100%
 
 /* Whole Page */
 #page
-	padding: 4%
-	margin: 4%
-	overflow: hidden
-	border-radius: $rem
-	background: $dark
-	background: rgba( #000, 0.7 )
-	+box-shadow( 0 0 $rem #000 )
+  background: $dark
+  background: rgba( #000, 0.7 )
+  border-radius: $rem
+  +box-shadow( 0 0 $rem #000 )
+  margin: 4%
+  overflow: hidden
+  padding: 4%
 
 /* Header */
 #skip-link a
-	background: $dark
-	padding: $half $rem
+  background: $dark
+  padding: $half $rem
 
 #home-link
-	border: none
-	float: left
+  border: none
+  float: left
 
 #home-link img
-	float: left
-	margin-right: $rem
+  float: left
+  margin-right: $rem
 
 #site-slogan
-	color: $light
-	margin: 0
-	white-space: nowrap
-	+text-shadow( 0 1px 0 #000 )
+  color: $light
+  margin: 0
+  +text-shadow( 0 1px 0 #000 )
+  white-space: nowrap
 
 #site-name
-	@extend #site-slogan
-	font:
-		size: 2.5 * $rem
-		family: Lobster, serif
-		weight: normal
+  @extend #site-slogan
+  font:
+    family: Lobster, serif
+    size: 2.5 * $rem
+    weight: normal
 
 .region-header
-	float: right
+  float: right
 
 /* Content */
 .title
-	border-bottom: 1px solid $medium
+  border-bottom: 1px solid $medium
 
 /* Menu */
 #page-menu ul
-	list-style-type: none
-	border-bottom: 1px solid $medium
-	overflow: hidden
-	padding: 0
-	clear: both
+  border-bottom: 1px solid $medium
+  clear: both
+  list-style-type: none
+  overflow: hidden
+  padding: 0
 
 #page-menu li
-	padding: 0
-	margin: 0
+  margin: 0
+  padding: 0
 
 #page-menu li a
-	color: $light
-	float: left
-	display: block
-	border-bottom: 4px solid rgba( #000, 0 )
-	padding: $half $rem
+  border-bottom: 4px solid rgba( #000, 0 )
+  color: $light
+  display: block
+  float: left
+  padding: $half $rem
 
-	&.active,
-	&:hover
-		color: $blue
-		border-bottom: 4px solid $blue
+  &.active,
+  &:hover
+    border-bottom: 4px solid $blue
+    color: $blue
 
 #footer-menu ul
-	list-style-type: none
-	padding: 0
-	margin: 0
+  list-style-type: none
+  margin: 0
+  padding: 0
 
-	li
-		float: left
-		padding-left: $half
-		margin-left: $half
-		border-left: 1px solid $light
+  li
+    border-left: 1px solid $light
+    float: left
+    margin-left: $half
+    padding-left: $half
 
-	li.first
-		border: none
-		padding: 0
-		margin: 0
+  li.first
+    border: none
+    margin: 0
+    padding: 0
 
 /* Drupal list overrides */
 li a.active
-	color: $light
+  color: $light
 
-	&:hover
-		color: $red
+  &:hover
+    color: $red
 
 ul.tabs li
-	line-height: 2
+  line-height: 2
 
 ul.tabs li a
-	padding: $half $rem
-	color: $dark
-	+border-radius( 5px 5px 0 0 )
+  +border-radius( 5px 5px 0 0 )
+  color: $dark
+  padding: $half $rem
 
-	&.active
-		border-bottom: none
+  &.active
+    border-bottom: none
 
-	&:hover
-		color: $medium
+  &:hover
+    color: $medium
 
 /* Sidebar */
 .sidebar
-	width: 25%
+  width: 25%
 
 .region-sidebar-first
-	padding-right: 5%
-	float: left
+  float: left
+  padding-right: 5%
 
 .region-sidebar-second
-	padding-left: 5%
-	float: right
+  float: right
+  padding-left: 5%
 
 .one-sidebar #page-main
-	width: 65%
-	float: left
+  float: left
+  width: 65%
 
 .sidebar-first #page-main
-	margin-left: 30%
-	margin-right: -95%
+  margin-left: 30%
+  margin-right: -95%
 
 .two-sidebars .sidebar
-	width: 20%
+  width: 20%
 
 .two-sidebars #page-main
-	width: 50%
-	float: left
-	margin-left: 25%
-	margin-right: -80%
-
+  float: left
+  margin-left: 25%
+  margin-right: -80%
+  width: 50%
 
 /* Footer */
 #page-footer
-	clear: both
-	border-top: 1px solid $medium
-	padding-top: $rem
+  border-top: 1px solid $medium
+  clear: both
+  padding-top: $rem
 
 .user-picture
-	float: left
-	margin-right: $rem
+  float: left
+  margin-right: $rem
 
 footer[role="contentinfo"]
-	margin-bottom: $rem
-	overflow: hidden
-	font-style: italic
+  font-style: italic
+  margin-bottom: $rem
+  overflow: hidden

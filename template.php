@@ -10,26 +10,26 @@
  * @see https://gist.github.com/pascalduez/1417914
  */
 function themage_preprocess_html(&$vars) {
-	// Add Lobster font
-	drupal_add_css('http://fonts.googleapis.com/css?family=Lobster', array('type' => 'external'));
+  // Add Lobster font.
+  drupal_add_css('http://fonts.googleapis.com/css?family=Lobster', array('type' => 'external'));
 
-	$vars['html_attributes_array'] = array();
+  $vars['html_attributes_array'] = array();
   $vars['body_attributes_array'] = array();
- 
+
   // HTML element attributes.
   $vars['html_attributes_array']['lang'] = $vars['language']->language;
   $vars['html_attributes_array']['dir']  = $vars['language']->dir;
- 
+
   // Adds RDF namespace prefix bindings in the form of an RDFa 1.1 prefix
   // attribute inside the html element.
   if (function_exists('rdf_get_namespaces')) {
-    $vars['rdf'] = new stdClass;
+    $vars['rdf'] = new stdClass();
     foreach (rdf_get_namespaces() as $prefix => $uri) {
       $vars['rdf']->prefix .= $prefix . ': ' . $uri . "\n";
     }
     $vars['html_attributes_array']['prefix'] = $vars['rdf']->prefix;
   }
- 
+
   // BODY element attributes.
   $vars['body_attributes_array']['class'] = $vars['classes_array'];
   $vars['body_attributes_array'] += $vars['attributes_array'];
@@ -63,27 +63,28 @@ function themage_html_head_alter(&$head_elements) {
  * Implements template_preprocess_region().
  */
 function themage_preprocess_region(&$vars) {
-	if ( $vars['region'] == 'sidebar_first' || $vars['region'] == 'sidebar_second' ) {
-		$vars['classes_array'][] = 'sidebar';
-	}
+  // Add sidebar class to sidebar regions.
+  if ($vars['region'] == 'sidebar_first' || $vars['region'] == 'sidebar_second') {
+    $vars['classes_array'][] = 'sidebar';
+  }
 }
 
 /**
  * Implements template_preprocess_node().
  */
 function themage_preprocess_node(&$vars) {
-	$vars['submitted'] = themage_submitted( $vars['name'], $vars['created'] );
+  $vars['submitted'] = themage_submitted($vars['name'], $vars['created']);
 }
 
 /**
  * Implements template_preprocess_comment().
  */
 function themage_preprocess_comment(&$vars) {
-	$vars['submitted'] = themage_submitted( $vars['author'], $vars['comment']->created );
+  $vars['submitted'] = themage_submitted($vars['author'], $vars['comment']->created);
 }
 
 /**
- * Formats a "submitted by" statement
+ * Formats a "submitted by" statement.
  *
  * This function adds an html5 "time" element to the
  * submitted by statement, for semantics.
@@ -93,40 +94,45 @@ function themage_preprocess_comment(&$vars) {
  * @param int $datetime
  *   The creation time, in UNIX timestamp format.
  *
- * @return
- *   A string to be used as "submitted by"
+ * @return string
+ *   To be used as "submitted by".
  */
-function themage_submitted( $author, $datetime ) {
-	$date_string = format_date( $datetime, 'custom', 'F j, Y' );
-	$time_string = format_date( $datetime, 'custom', 'c' );
-	return t('Submitted by !username on !datetime',
-		array(
-			'!username' => $author,
-			'!datetime' => "<time datetime='$time_string'>$date_string</time>",
-		)
-	);
+function themage_submitted($author, $datetime) {
+  $date_string = format_date($datetime, 'custom', 'F j, Y');
+  $time_string = format_date($datetime, 'custom', 'c');
+  return t('Submitted by !username on !datetime',
+    array(
+      '!username' => $author,
+      '!datetime' => "<time datetime='$time_string'>$date_string</time>",
+    )
+  );
 }
 
 /**
  * Implements template_preprocess_block().
  */
 function themage_preprocess_block(&$vars) {
-	$vars['attributes_array']['role'] = 'complementary';
+  $vars['attributes_array']['role'] = 'complementary';
 }
 
 /**
  * Implements template_breadcrumb().
  */
 function themage_breadcrumb(&$vars) {
-	$breadcrumb = $vars['breadcrumb'];
+  $breadcrumb = $vars['breadcrumb'];
 
-	if ( empty($breadcrumb) || !theme_get_setting('breadcrumb_display') )
-		return;
+  // Don't show anything if there's no breadcrumb or it shouldn't be displayed.
+  if (empty($breadcrumb) || !theme_get_setting('breadcrumb_display')) {
+    return;
+  }
 
-	if ( theme_get_setting('breadcrumb_title') )
-		$breadcrumb[] = drupal_get_title();
+  // Optionally, add title.
+  if (theme_get_setting('breadcrumb_title')) {
+    $breadcrumb[] = drupal_get_title();
+  }
 
-	$breadcrumb_string = implode( theme_get_setting('breadcrumb_separator'), $breadcrumb );
+  // Create the string to display from the array.
+  $breadcrumb_string = implode(theme_get_setting('breadcrumb_separator'), $breadcrumb);
 
-	return theme_get_setting('breadcrumb_prefix') . $breadcrumb_string;
+  return theme_get_setting('breadcrumb_prefix') . $breadcrumb_string;
 }
