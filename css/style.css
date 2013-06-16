@@ -82,6 +82,7 @@ button,
   font-weight: bold;
   padding: 7px 14px;
   text-shadow: 0 1px 0 white;
+  white-space: nowrap;
 }
 input[type="submit"]:hover,
 input[type="cancel"]:hover,
@@ -390,7 +391,8 @@ footer[role="contentinfo"] {
   margin: 1em;
 }
 .item-list .pager li {
-  margin: 0;
+  display: inline-block;
+  margin: 7px 0;
   padding: 0;
 }
 
