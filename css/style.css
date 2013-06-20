@@ -18,6 +18,7 @@ h5,
 h6 {
   font-family: Lobster, serif;
   font-weight: normal;
+  margin-top: 0;
   text-shadow: 0 1px 0 black;
 }
 
@@ -253,6 +254,10 @@ img {
   float: right;
 }
 
+#page-breadcrumb {
+  margin-bottom: 14px;
+}
+
 /* Content */
 .title {
   border-bottom: 1px solid #666666;
@@ -334,6 +339,10 @@ ul.tabs li a:hover {
 }
 
 /* Sidebar */
+.block {
+  margin-bottom: 14px;
+}
+
 .sidebar {
   width: 25%;
 }
