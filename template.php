@@ -122,7 +122,12 @@ function themage_submitted($author, $datetime) {
  * Implements template_preprocess_block().
  */
 function themage_preprocess_block(&$vars) {
-  $vars['attributes_array']['role'] = 'complementary';
+  if ($vars['block']->region == 'sidebar_first' || $vars['block']->region == 'sidebar_second') {
+    $vars['attributes_array']['role'] = 'complementary';
+  }
+  elseif ($vars['block']->module == 'search') {
+    $vars['attributes_array']['role'] = 'search';
+  }
 }
 
 /**
