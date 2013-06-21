@@ -13,7 +13,7 @@ function themage_preprocess_html(&$vars) {
   // Add Lobster font.
   drupal_add_css('http://fonts.googleapis.com/css?family=Lobster', array('type' => 'external'));
 
-  // Site is responsive, show it
+  // Site is responsive, make sure initial scale is appropriate.
   $viewport = array(
     '#tag' => 'meta',
     '#attributes' => array(
