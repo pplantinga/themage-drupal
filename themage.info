@@ -1,6 +1,6 @@
 name = Themage
 description = Simple, lightweight, responsive, accessible, future-friendly theme.
-core = 7.x
+core = 8.x
 
 stylesheets[all][] = css/style.css
 
