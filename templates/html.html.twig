@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Themage's implementation to display the basic html structure
+ * of a single Drupal page.
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+  {{ head }}
+  <title>{{ head_title }}</title>
+  {{ styles }}
+  {{ scripts }}
+</head>
+<body{{ attributes }}>
+  <nav id="skip-link" role="navigation">
+    <a href="#main-content" class="visually-hidden focusable"
+      onclick="jQuery('#main-content').attr('tabIndex',-1).focus();">
+      {{- 'Skip to main content'|t -}}
+    </a>
+  </nav>
+  {{ page_top }}
+  {{ page }}
+  {{ page_bottom }}
+</body>
+</html>
