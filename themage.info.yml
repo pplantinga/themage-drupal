@@ -1,0 +1,20 @@
+name: Themage
+type: theme
+description: Simple, lightweight, responsive, accessible, future-friendly theme.
+core: 8.x
+stylesheets:
+  all:
+    - css/style.css
+settings:
+  breadcrumb_display: 1
+  breadcrumb_title: 1
+  breadcrumb_separator: ' > '
+  breadcrumb_prefix: 'You are here: '
+regions:
+  header: Header
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
+  footer: Footer
