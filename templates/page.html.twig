@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Themage's implemenation to display a single Drupal page.
+ */
+#}
+<div id="page">
+
+  <header id="page-header" role="banner" class="clearfix">
+
+    <a href="{{ front_page }}" rel="home" id="home-link">
+      {% if logo %}
+        <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+      {% endif %}
+
+      {% if site_name or site_slogan %}
+        <div id="name-and-slogan">
+          {% if site_name %}
+            {% if title %}
+              <div id="site-name">{{ site_name }}</div>
+            {# Use h1 when the content title is empty #}
+            {% else %}
+              <h1 id="site-name">{{ site_name }}</h1>
+            {% endif %}
+          {% endif %}
+          {% if site_slogan %}
+            <div id="site-slogan">{{ site_slogan }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </a>
+
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+  </header>
+
+  {% if main_menu %}
+    <nav id="page-menu" role="navigation">
+      {{ main_menu }}
+      {{ secondary_menu }}
+    </nav>
+  {% endif %}
+
+  {% if breadcrumb %}
+    <nav id="page-breadcrumb" role="navigation">{{ breadcrumb }}</nav>
+  {% endif %}
+
+  {{ messages }}
+
+  <main id="page-main" role="main">
+
+    <header id="main-header">
+      {% if page.highlighted %}<div id="highlighted">{{ page['highlighted'] }}</div>{% endif %}
+      {{ title_prefix }}
+      {% if title %}<h1 class="title" id="main-title">{{ title }}</h1>{% endif %}
+      {{ title_suffix }}
+      {% if tabs %}<nav class="tabs">{{ tabs }}</nav>{% endif %}
+      {{ page.help }}
+      {% if action_links %}<ul class="action-links">{{ action_links }}</ul>{% endif %}
+    </header>
+
+    <section id="main-content">
+      {{ page.content }}
+      {{ feed_icons }}
+    </section> <!-- #main-content -->
+  </main>
+
+  {% if page.sidebar_first %}
+    {{ page.sidebar_first }}
+  {% endif %}
+
+  {% if page.sidebar_second %}
+    {{ page.sidebar_second }}
+  {% endif %}
+
+  <footer id="page-footer">
+    {{ page.footer }}
+  </footer>
+
+</div> <!-- #page -->
