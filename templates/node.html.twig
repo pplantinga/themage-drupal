@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Themage's implementation to display a node.
+ */
+#}
+<article id="node-{{ node.nid }}" class="{{ attributes.class }} clearfix"{{ attributes }}>
+
+  <header>
+    {{ title_prefix }}
+    {% if not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ node_url }}">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+  </header>
+
+  <section{{ content_attributes }}>
+    {# We hide the comments and links now so that we can render them later. #}
+    {% hide(content.comments) %}
+    {% hide(content.links) %}
+    {{ content }}
+  </section>
+
+  <footer role="contentinfo">
+    {{ user_picture }}
+    
+    {% if display_submitted %}
+      {{ submitted }}
+    {% endif %}
+  </footer>
+  
+  {{ content.links }}
+  {{ content.comments }}
+</article>
