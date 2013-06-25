@@ -36,14 +36,14 @@ function themage_preprocess_region(&$vars) {
  * Implements template_preprocess_node().
  */
 function themage_preprocess_node(&$vars) {
-  $vars['submitted'] = themage_submitted($vars['name'], $vars['created']);
+  $vars['submitted'] = themage_submitted($vars['name'], $vars['node']->created);
 }
 
 /**
  * Implements template_preprocess_comment().
  */
 function themage_preprocess_comment(&$vars) {
-  $vars['submitted'] = themage_submitted($vars['author'], $vars['comment']->created);
+  $vars['submitted'] = themage_submitted($vars['author'], $vars['comment']->created->value);
 }
 
 /**
