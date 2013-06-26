@@ -323,6 +323,7 @@ ul.tabs li {
 }
 
 ul.tabs li a {
+  background: #cccccc;
   -webkit-border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
   -ms-border-radius: 5px 5px 0 0;
