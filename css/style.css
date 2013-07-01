@@ -267,6 +267,7 @@ img {
 #page-menu ul {
   border-bottom: 1px solid #666666;
   clear: both;
+  display: block;
   list-style-type: none;
   overflow: hidden;
   padding: 0;
